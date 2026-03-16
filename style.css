@@ -1,10 +1,12 @@
 body{
     background-color:#a15dc5;
     font-family: "Courier New", Courier, monospace;
+    font-size:16px;
 }
 
 .container{
     display:flex;
+    flex-wrap:wrap;
 }
 
 .sidebar{
@@ -16,6 +18,8 @@ body{
 .content{
     padding:20px;
     max-width:700px;
+    width:100%;
+    flex:1;
 }
 
 a{
@@ -25,34 +29,39 @@ a{
 
 a:hover{
     text-decoration:underline;
-    color: rgb(255, 255, 255);
+    color:white;
 }
 
-
-.center-top {
-    text-align: center;
-}
-
-/* Default styles (mobile first) */
-body {
-  font-size: 16px;
+.center-top{
+    text-align:center;
 }
 
 /* Tablet */
-@media (min-width: 768px) {
-  body {
-    font-size: 18px;
-  }
+@media (min-width:768px){
+    body{
+        font-size:18px;
+    }
 }
 
 /* Desktop */
-@media (min-width: 1024px) {
-  body {
-    font-size: 20px;
-  }
+@media (min-width:1024px){
+    body{
+        font-size:20px;
+    }
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+/* Mobile layout fix */
+@media (max-width:768px){
+    .container{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+}
+
+img{
+    max-width:100%;
+    height:auto;
 }
