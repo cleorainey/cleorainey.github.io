@@ -1,20 +1,25 @@
+/* General page styling */
 body{
     background-color:#a15dc5;
-    font-family: "Courier New", Courier, monospace;
+    font-family:"Courier New", Courier, monospace;
     font-size:16px;
+    margin:0;
 }
 
+/* Layout container */
 .container{
     display:flex;
     flex-wrap:wrap;
 }
 
+/* Sidebar */
 .sidebar{
     width:200px;
     padding:20px;
     background-color:#29c44a;
 }
 
+/* Main content */
 .content{
     padding:20px;
     max-width:700px;
@@ -22,6 +27,7 @@ body{
     flex:1;
 }
 
+/* Links */
 a{
     text-decoration:none;
     color:rgb(226, 250, 11);
@@ -32,26 +38,36 @@ a:hover{
     color:white;
 }
 
+/* Center text helper */
 .center-top{
     text-align:center;
 }
 
-/* Tablet */
+/* Images (desktop default) */
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+    margin:auto;
+}
+
+/* Tablet text size */
 @media (min-width:768px){
     body{
         font-size:18px;
     }
 }
 
-/* Desktop */
+/* Desktop text size */
 @media (min-width:1024px){
     body{
         font-size:20px;
     }
 }
 
-/* Mobile layout fix */
+/* Mobile layout adjustments */
 @media (max-width:768px){
+
     .container{
         flex-direction:column;
     }
@@ -59,9 +75,10 @@ a:hover{
     .sidebar{
         width:100%;
     }
-}
 
-img{
-    max-width:100%;
-    height:auto;
+    /* Make images smaller on phones */
+    img{
+        max-width:80%;
+    }
+
 }
