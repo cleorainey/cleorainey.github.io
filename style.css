@@ -32,3 +32,27 @@ a:hover{
 .center-top {
     text-align: center;
 }
+
+/* Default styles (mobile first) */
+body {
+  font-size: 16px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
