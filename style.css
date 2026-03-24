@@ -19,12 +19,24 @@ body{
     background-color:#29c44a;
 }
 
+.sidebar a {
+    display: block;
+    margin-bottom: 5px; /* spaced nicely */
+}
+
 /* Main content */
 .content{
     padding:20px;
     max-width:700px;
     width:100%;
     flex:1;
+}
+
+/* Inner content wrapper for spacing */
+.content-inner {
+    padding: 0 20px;
+    max-width: 900px;
+    margin: auto;
 }
 
 /* Links */
@@ -38,11 +50,23 @@ a:hover{
     color:white;
 }
 
+/* Retro 90s style links in content */
+.content a {
+    color: rgb(226, 250, 11);
+    text-decoration: none;
+    border-bottom: 1px dotted yellow;
+    transition: all 0.3s;
+}
+
+.content a:hover {
+    color: white;
+    text-shadow: 0 0 5px yellow;
+}
+
 /* Center text helper */
 .center-top{
     text-align:center;
 }
-
 
 /* MAIN LINKS IMAGE */
 .main-links img {
@@ -54,9 +78,9 @@ a:hover{
 
 /* BOTTOM TEXT PADDING */
 .bottom-text {
-    padding: 0 20px;       /* horizontal space from edges */
-    max-width: 900px;      /* optional, keeps lines readable on very wide screens */
-    margin: 20px auto;     /* centers block and adds vertical spacing */
+    padding: 0 20px;       
+    max-width: 900px;      
+    margin: 20px auto;     
 }
 
 /* Images (desktop default) */
@@ -107,8 +131,8 @@ img{
 }
 
 .gallery a {
-    flex: 1 1 150px; /* flexible width, minimum 150px */
-    max-width: 200px; /* prevents images from being huge on desktop */
+    flex: 1 1 150px;
+    max-width: 200px;
     text-align: center;
 }
 
@@ -150,7 +174,7 @@ img{
 /* Image inside lightbox */
 .lightbox-content img {
     max-width: 100%;
-    max-height: 70vh; /* ensures caption has room */
+    max-height: 70vh;
     margin-bottom: 10px;
 }
 
@@ -203,7 +227,7 @@ img{
 }
 
 .poem {
-    width: 50%;
+    width: 48%; /* slightly wider for readability */
     border: 1px solid black;
     padding: 10px;
     cursor: pointer;
@@ -229,4 +253,10 @@ summary {
 .sounds audio {
     display: block;
     margin: 5px 0;
+}
+
+/* Lists styling (for streaming & Wikipedia links) */
+.content ul {
+    list-style: none;
+    padding-left: 0;
 }
