@@ -43,6 +43,22 @@ a:hover{
     text-align:center;
 }
 
+
+/* MAIN LINKS IMAGE */
+.main-links img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+/* BOTTOM TEXT PADDING */
+.bottom-text {
+    padding: 0 20px;       /* horizontal space from edges */
+    max-width: 900px;      /* optional, keeps lines readable on very wide screens */
+    margin: 20px auto;     /* centers block and adds vertical spacing */
+}
+
 /* Images (desktop default) */
 img{
     max-width:100%;
