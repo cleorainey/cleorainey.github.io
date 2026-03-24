@@ -120,6 +120,14 @@ img{
     display: block;
 }
 
+.lightbox .caption {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    font-family: "Courier New", monospace;
+}
+
 /* POEM GRID */
 .poems {
     display: flex;
