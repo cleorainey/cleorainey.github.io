@@ -1,4 +1,4 @@
-/* General page styling */
+/* ================= GENERAL PAGE STYLING ================= */
 body{
     background-color:#a15dc5;
     font-family:"Courier New", Courier, monospace;
@@ -67,7 +67,6 @@ img{
 
 /* Mobile layout adjustments */
 @media (max-width:768px){
-
     .container{
         flex-direction:column;
     }
@@ -80,42 +79,47 @@ img{
     img{
         max-width:80%;
     }
-
 }
 
-/* Added for gallery and poems grids */
+/* ================= GALLERY & LIGHTBOX ================= */
 .gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
+    justify-content: center;
+}
+
+.gallery a {
+    flex: 1 1 150px; /* flexible width, minimum 150px */
+    max-width: 200px; /* prevents images from being huge on desktop */
+    text-align: center;
 }
 
 .gallery img {
-    width: 150px;
+    width: 100%;
+    height: auto;
     cursor: pointer;
     border: 2px solid black;
 }
 
-/* LIGHTBOX */
+/* Lightbox overlay */
 .lightbox {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
+    top:0;
+    left:0;
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.95);
     z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto;
+    text-align: center;
     padding: 20px;
+    overflow-y: auto;
 }
 
 .lightbox:target {
-    display: flex;
+    display: block;
 }
 
 /* Content inside lightbox */
@@ -124,16 +128,17 @@ img{
     flex-direction: column;
     align-items: center;
     max-width: 90%;
+    margin: auto;
 }
 
 /* Image inside lightbox */
 .lightbox-content img {
     max-width: 100%;
-    max-height: 80vh; /* ensures caption has room */
+    max-height: 70vh; /* ensures caption has room */
     margin-bottom: 10px;
 }
 
-/* Caption */
+/* Caption styling */
 .lightbox .caption {
     color: white;
     font-family: "Courier New", monospace;
@@ -147,15 +152,33 @@ img{
 }
 
 /* Close link */
-.close-link {
+.lightbox .close-link {
     color: yellow;
-    text-decoration: none;
     font-size: 20px;
-    margin-top: 10px;
+    text-decoration: none;
+    align-self: flex-end;
+    margin-bottom: 10px;
 }
 
+/* Responsive gallery thumbnails */
+@media (max-width: 1024px) {
+    .gallery a {
+        flex: 1 1 130px;
+        max-width: 150px;
+    }
+}
 
-/* POEM GRID */
+@media (max-width: 768px) {
+    .gallery {
+        gap: 5px;
+    }
+    .gallery a {
+        flex: 1 1 100px;
+        max-width: 120px;
+    }
+}
+
+/* ================= POEM GRID ================= */
 .poems {
     display: flex;
     flex-wrap: wrap;
@@ -182,7 +205,7 @@ summary {
     font-size: 12px;
 }
 
-/* SOUND SECTION */
+/* ================= SOUND SECTION ================= */
 .sounds {
     margin-top: 20px;
 }
