@@ -5,72 +5,172 @@
 <meta charset="utf-8">
 <title>Words & Pictures & Sounds</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* LIGHTBOX CSS */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.gallery img {
+    width: 150px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    text-align: center;
+    z-index: 1000;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    margin-top: 5%;
+}
+
+.lightbox:target {
+    display: block;
+}
+
+/* POEM GRID */
+.poems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.poem {
+    width: 45%;
+    border: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+}
+
+summary {
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.poem p {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+/* SOUND SECTION */
+.sounds {
+    margin-top: 20px;
+}
+
+.sounds audio {
+    display: block;
+    margin: 5px auto;
+}
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-<div class="sidebar">
+    <div class="sidebar">
 
-<h3>CLEO RAINEY</h3>
+        <h3>CLEO RAINEY</h3>
 
-<a href="index.html">home</a><br>
-<a href="media.html">words pictures sounds</a><br>
-<a href="thoughts.html">thoughts & questions</a><br>
-<a href="elsewhere.html">elsewhere</a><br>
-</div>
+        <a href="index.html">home</a><br>
+        <a href="media.html">words pictures sounds</a><br>
+        <a href="thoughts.html">thoughts & questions</a><br>
+        <a href="elsewhere.html">elsewhere</a><br>
 
-<div class="content">
+    </div>
 
-<h1>Words & Pictures & Sounds</h1>
+    <div class="content">
 
-<p>Feel free to browse, I have selected some Words, Pictures & Sounds for you.
-<br><br>If you're feeling particularly brave, enter the WILDCARD domain...</p>
-<h3>WORDS</h3>
+        <h1>Words & Pictures & Sounds</h1>
 
-<H5>NAKED</H5>
-  
-<H6>If I must be buried, please don't put me in a "good" outfit<BR>
-I cannot think of anything more dating<BR>
-can you imagine??<BR>
-how unbearably gauche would it be to be dug up in a (polluting) polyester dress ... from the 2000s<BR>
-<BR>
-No, the naked body is always stylish<BR>
-<BR>
-Please, bury me barefoot beneath a meadow, so that wildflowers may grow on my grave<BR>
-field mice may harvest the fruits of my labour<BR>
-worms may pull through my decay<BR>
-And you shall not think of me as anything<BR>
-but a naked wild thing<BR>
-<BR>
-free, plentiful<BR>
-sexy, biodegradable</H6><BR>
+        <p>Feel free to browse, I have selected some Words, Pictures & Sounds for you.
+        <br><br>If you're feeling particularly brave, enter the WILDCARD domain...</p>
 
-<H5>ANIMALS</H5>
-<H6>Along the hypotenuse of the hippopotamus’ nose is a very strange place to be<BR>
-Not least because of the bulging bogies that flow when the blubbering beast does sneeze<BR>
-<BR>
-Perpendicular to the pelican with the wind to the west of him is a very poor place to be<BR>
-Not least because of the smell he can make come out of him at about 180°<BR>
-<BR>
-Tessellating yourself on the tracks of a tiger is a very troubling place to be<BR>
-Not least because of the tears on your cheeks as she opens her mouth full of teeth<BR>
-<BR>
-I Sat On Swanage Cliffs Eating Lovely Egg Sandwiches (Isosceles): the very best place to be<BR>
-Not least because with my hand in yours, it was just you and me and the sea</H6><BR>
+        <!-- WORDS GRID -->
+        <h3>WORDS</h3>
+        <div class="poems">
 
-  
-<h3>PICTURES</h3>
-<img src="images/photography/Christgus.jpg" alt="Festive Gus"><br>
-<img src="images/photography/KitKatGarden.jpg" alt="KitKat in the Garden"><br>
-<img src="images/photography/GraveyardSigh.jpg" alt="Graveyard Sigh">
-<h3>SOUNDS</h3>
-<h3>WILDCARD !</h3>
-<h5><a href="wildcard/1.html">1</a><br>
-</h5>
-</div>
+            <details class="poem">
+                <summary>NAKED</summary>
+                <p>
+                If I must be buried, please don't put me in a "good" outfit<br>
+                I cannot think of anything more dating<br>
+                can you imagine??<br><br>
+                No, the naked body is always stylish<br><br>
+                Please, bury me barefoot beneath a meadow, so that wildflowers may grow on my grave<br>
+                field mice may harvest the fruits of my labour<br>
+                worms may pull through my decay<br>
+                And you shall not think of me as anything<br>
+                but a naked wild thing<br><br>
+                free, plentiful<br>
+                sexy, biodegradable
+                </p>
+            </details>
 
+            <details class="poem">
+                <summary>ANIMALS</summary>
+                <p>
+                Along the hypotenuse of the hippopotamus’ nose is a very strange place to be<br>
+                Not least because of the bulging bogies that flow when the blubbering beast does sneeze<br><br>
+                Perpendicular to the pelican with the wind to the west of him is a very poor place to be<br>
+                Not least because of the smell he can make come out of him at about 180°<br><br>
+                Tessellating yourself on the tracks of a tiger is a very troubling place to be<br>
+                Not least because of the tears on your cheeks as she opens her mouth full of teeth<br><br>
+                I Sat On Swanage Cliffs Eating Lovely Egg Sandwiches (Isosceles): the very best place to be<br>
+                Not least because with my hand in yours, it was just you and me and the sea
+                </p>
+            </details>
+
+        </div>
+
+        <!-- PICTURES GRID -->
+        <h3>PICTURES</h3>
+        <div class="gallery">
+
+            <a href="#img1"><img src="images/photography/Christgus.jpg" alt="Festive Gus"></a>
+            <a href="#img2"><img src="images/photography/KitKatGarden.jpg" alt="KitKat in the Garden"></a>
+            <a href="#img3"><img src="images/photography/GraveyardSigh.jpg" alt="Graveyard Sigh"></a>
+
+        </div>
+
+        <!-- LIGHTBOXES -->
+        <div id="img1" class="lightbox"><a href="#"><img src="images/photography/Christgus.jpg"></a></div>
+        <div id="img2" class="lightbox"><a href="#"><img src="images/photography/KitKatGarden.jpg"></a></div>
+        <div id="img3" class="lightbox"><a href="#"><img src="images/photography/GraveyardSigh.jpg"></a></div>
+
+        <!-- SOUNDS -->
+        <h3>SOUNDS</h3>
+        <div class="sounds">
+            <audio controls>
+                <source src="sounds/track1.mp3" type="audio/mpeg">
+            </audio>
+            <audio controls>
+                <source src="sounds/track2.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <!-- WILDCARD -->
+        <h3>WILDCARD !</h3>
+        <h5><a href="wildcard/1.html">1</a></h5>
+
+    </div>
 </div>
 
 </body>
